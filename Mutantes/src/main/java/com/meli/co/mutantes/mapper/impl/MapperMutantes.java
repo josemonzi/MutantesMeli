@@ -15,12 +15,13 @@ public class MapperMutantes implements IMapperMutantes{
 	public EstadisticaDTO obtenerEstadisticas(String consultaRegistros) {
 		LOGGER.info("Obtener estadisticas de la bd: " + consultaRegistros);
 		
-		if(consultaRegistros == null || consultaRegistros.isEmpty())
+		if( null == consultaRegistros|| consultaRegistros.isEmpty())
 			throw new ModeloNotFoundException(Constantes.MENSAJE_NULO);
 		String[] elementosConsulta =consultaRegistros.split(",");
 		
 		EstadisticaDTO estadistica = new EstadisticaDTO(Integer.parseInt(elementosConsulta[0]),
-				Integer.parseInt(elementosConsulta[1]), Double.parseDouble(elementosConsulta[2]));
+				Integer.parseInt(elementosConsulta[1]), 
+				Double.parseDouble("NULL".equals(elementosConsulta[2].toUpperCase())?"0":elementosConsulta[2]));
 		return estadistica;
 	}
 

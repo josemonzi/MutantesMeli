@@ -73,5 +73,19 @@ public class UtilidadesTest {
 		
 		utilidades.crearMatriz(dna);
 	}
+	
+	@Test(expected = BadRequestException.class)
+	public void cuandoLlegaCadenaMutanteNulaNoValidaEntoncesValidaCadenaDnaRetornandoError400()throws Exception {
+		String[] dna = new String[] {};
+		
+		utilidades.validaCadenaDna(dna);
+	}
+	
+	@Test(expected = BadRequestException.class)
+	public void cuandoLlegaCadenaMutanteNullNoValidaEntoncesValidaCadenaDnaRetornandoError400()throws Exception {
+		String[] dna = null;
+		
+		utilidades.crearMatriz(dna);
+	}
 
 }

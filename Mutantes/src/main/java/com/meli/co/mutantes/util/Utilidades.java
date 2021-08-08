@@ -16,12 +16,14 @@ public class Utilidades {
 	public boolean validaCadenaDna(String[] dna) {
 		LOGGER.info("Valida cadena DNA: " + Arrays.toString(dna));
 		
-		if(dna == null || dna.length == 0)
+		if( null == dna || 0 == dna.length)
 			throw new BadRequestException(Constantes.MENSAJE_MAL_REQUEST);
 		
 		Pattern patron = Pattern.compile(Constantes.PATRON);
 		int cantidad = dna.length;
-		for(int i=0; i<cantidad; i++) {			
+		for(int i=0; i<cantidad; i++) {	
+			if(dna[i].trim().isEmpty())
+				throw new BadRequestException(Constantes.MENSAJE_MAL_REQUEST);
 			Matcher combina = patron.matcher(dna[i].toUpperCase());
 			if(combina.find())
 				return false;			
@@ -42,7 +44,8 @@ public class Utilidades {
 		for(int i =0; i< fila; i++) {
 			for(int j=0; j<columna; j++) {
 				matrizMutante[i][j]= dna[i].toCharArray()[j];
-				LOGGER.info("Matriz cadena DNA: " + matrizMutante[i][j]);
+				LOGGER.info("Matriz cadena DNA: " + matrizMutante[i][j] + " posicion fila: " + i
+						+ " posicion columna: " + j);
 			}
 		}	
 		return matrizMutante;		 

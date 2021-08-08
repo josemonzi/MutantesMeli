@@ -35,7 +35,7 @@ public class MutanteService implements IMutanteService {
 		LOGGER.info("validar si es un mutante: " + Arrays.toString(dna));
 		boolean validaMutante = false;
 		
-		if(dna == null || dna.length ==0 || !utilidades.validaCadenaDna(dna)) {
+		if( null == dna || 0 == dna.length  || !utilidades.validaCadenaDna(dna)) {
 			throw new BadRequestException(Constantes.MENSAJE_MAL_REQUEST);
 		}
 		
