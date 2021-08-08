@@ -91,7 +91,7 @@ public class MutanteService implements IMutanteService {
 	}
 	
 	private void registrarCadenaDna(boolean ctrMutante, String[] dna) {
-		LOGGER.info("Registrar Mutante - Cadena: " + Arrays.toString(dna) + "es mutante: " + ctrMutante);
+		LOGGER.info("Registrar Mutante - Cadena: " + Arrays.toString(dna) + " es mutante: " + ctrMutante);
 		Mutante mutante = new Mutante();
 		
 		mutante.setDna(Arrays.toString(dna));

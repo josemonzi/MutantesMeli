@@ -1,11 +1,11 @@
-package com.meli.co.mutantes.mapper;
+package com.meli.co.mutantes.mapper.impl;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import com.meli.co.mutantes.dto.EstadisticaDTO;
 import com.meli.co.mutantes.exception.ModeloNotFoundException;
-import com.meli.co.mutantes.mapper.impl.IMapperMutantes;
+import com.meli.co.mutantes.mapper.IMapperMutantes;
 import com.meli.co.mutantes.util.Constantes;
 
 public class MapperMutantes implements IMapperMutantes{

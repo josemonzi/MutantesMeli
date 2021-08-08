@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.meli.co.mutantes.dto.EstadisticaDTO;
 import com.meli.co.mutantes.dto.MutanteDnaDTO;
-import com.meli.co.mutantes.mapper.impl.IMapperMutantes;
+import com.meli.co.mutantes.mapper.IMapperMutantes;
 import com.meli.co.mutantes.service.IMutanteService;
 import com.meli.co.mutantes.util.Constantes;
 

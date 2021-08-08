@@ -1,4 +1,4 @@
-package com.meli.co.mutantes.mapper.impl;
+package com.meli.co.mutantes.mapper;
 
 import com.meli.co.mutantes.dto.EstadisticaDTO;
 

@@ -4,8 +4,8 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
-import com.meli.co.mutantes.mapper.MapperMutantes;
-import com.meli.co.mutantes.mapper.impl.IMapperMutantes;
+import com.meli.co.mutantes.mapper.IMapperMutantes;
+import com.meli.co.mutantes.mapper.impl.MapperMutantes;
 import com.meli.co.mutantes.service.impl.BuscarDNA;
 import com.meli.co.mutantes.util.Utilidades;
 
