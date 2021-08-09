@@ -71,7 +71,6 @@ public class MutanteService implements IMutanteService {
 					matrizTmp = buscarDna.ejecutarStrategy(i, j, itemPivote, matrizMutante, cantidadMutante);
 					buscarDna.setStrategyBuscarCadena(new StrategyBuscarDiagonalIzquierda());
 					matrizTmp = buscarDna.ejecutarStrategy(i, j, itemPivote, matrizMutante, cantidadMutante);
-				printMatrix(matrizTmp);
 				if(validarBusquedaMutante(cantidadMutante.getContadorMutante())){
 					return true;					
 				};	
@@ -80,17 +79,6 @@ public class MutanteService implements IMutanteService {
 		LOGGER.info(Constantes.MENSAJE_SUCCESS_HUMANO);
 		return false;
 	}
-	
-	private static void printMatrix(char[][] matrix) {
-        System.out.println("\n Matriz analizada: ");
-        for (int i = 0; i < matrix.length; i++) {
-            System.out.println("");
-            for (int j = 0; j < matrix[0].length; j++) {
-                //imprime matriz generada
-                System.out.print(matrix[i][j] + " ");
-            }
-        }
-    }
 	
 	private void registrarCadenaDna(boolean ctrMutante, String[] dna) {
 		LOGGER.info("Registrar Mutante - Cadena: " + Arrays.toString(dna) + " es mutante: " + ctrMutante);
