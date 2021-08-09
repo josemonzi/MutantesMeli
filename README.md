@@ -46,7 +46,7 @@ spring.datasource.password = contraseña para conectarse a la base de datos.
 
 En la solución se utilizó el patrón MVC para el intercambio de información entre capas y el patrón Strategy para el recorrido de la matriz al encontrar si es un mutante.
 
-![Screenshot](https://github.com/josemonzi/fuego-quasar/blob/develop/FuegoQuasar/imagenes/ClassDiagram.jpg?raw=true)
+![Screenshot](https://github.com/josemonzi/MutantesMeli/blob/dev/Mutantes/src/main/resources/imagenes/Diagrama_Clases.gif?raw=true)
 
 El software se desarrolla con el framework Spring Boot versión 2.5.3, Java 8, y diversas librerías para el manejo del test (Junit versión 4.13.1, Mockito 3.6.28, jacoco 0.8.0).
 
