@@ -1,15 +1,18 @@
 package com.meli.co.mutantes.service.impl;
 
 import java.util.Arrays;
+import java.util.List;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 
 import com.meli.co.mutantes.dao.IMutanteDao;
 import com.meli.co.mutantes.entities.Mutante;
 import com.meli.co.mutantes.exception.BadRequestException;
+import com.meli.co.mutantes.exception.ForbiddenException;
 import com.meli.co.mutantes.service.IMutanteService;
 import com.meli.co.mutantes.util.Constantes;
 import com.meli.co.mutantes.util.Utilidades;
@@ -40,7 +43,11 @@ public class MutanteService implements IMutanteService {
 		}
 		
 		validaMutante = buscarMutante(utilidades.crearMatriz(dna));
-		registrarCadenaDna(validaMutante, dna);		
+		registrarCadenaDna(validaMutante, dna);	
+		
+		if(!validaMutante)
+			throw new ForbiddenException(HttpStatus.FORBIDDEN);	
+			
 		return validaMutante;
 	}	
 	
@@ -48,6 +55,7 @@ public class MutanteService implements IMutanteService {
 		LOGGER.info("Buscar si es un mutante");
 		int columna = matrizMutante[0].length;
 		int fila = matrizMutante.length;
+		int contadorMutante = 0; 
 		boolean banderaCadena= false;
 		
 		for(int i=0; i< fila; i++ ) {
@@ -61,7 +69,11 @@ public class MutanteService implements IMutanteService {
 					banderaCadena = buscarDna.ejecutarStrategy(i, j, itemPivote, matrizMutante);
 				}else{
 					LOGGER.info(Constantes.MENSAJE_SUCCESS_MUTANTE);
-					return banderaCadena;
+					contadorMutante++;					
+					if(contadorMutante >=2)
+						return banderaCadena;
+					else
+						banderaCadena= false;
 				}
 				
 				if(!banderaCadena){
@@ -69,7 +81,11 @@ public class MutanteService implements IMutanteService {
 					banderaCadena = buscarDna.ejecutarStrategy(i, j, itemPivote, matrizMutante);
 				}else{
 					LOGGER.info(Constantes.MENSAJE_SUCCESS_MUTANTE);
-					return banderaCadena;
+					contadorMutante++;
+					if(contadorMutante >=2)
+						return banderaCadena;
+					else
+						banderaCadena= false;
 				}
 				
 				if(!banderaCadena){
@@ -78,11 +94,19 @@ public class MutanteService implements IMutanteService {
 					
 					if(banderaCadena) {
 						LOGGER.info(Constantes.MENSAJE_SUCCESS_MUTANTE);
-						return banderaCadena;
+						contadorMutante++;						
+						if(contadorMutante >=2)
+							return banderaCadena;
+						else
+							banderaCadena= false;
 					}
 				}else{
 					LOGGER.info(Constantes.MENSAJE_SUCCESS_MUTANTE);
-					return banderaCadena;
+					contadorMutante++;					
+					if(contadorMutante >=2)
+						return banderaCadena;
+					else
+						banderaCadena= false;
 				}				
 			}
 		}	
@@ -93,14 +117,21 @@ public class MutanteService implements IMutanteService {
 	private void registrarCadenaDna(boolean ctrMutante, String[] dna) {
 		LOGGER.info("Registrar Mutante - Cadena: " + Arrays.toString(dna) + " es mutante: " + ctrMutante);
 		Mutante mutante = new Mutante();
+		String cadenaDna = utilidades.convertirDnaSHA256(Arrays.toString(dna)); 
 		
-		mutante.setDna(Arrays.toString(dna));
-		mutante.setCtrMutante(ctrMutante?1:0);
+		Mutante mutanteEntetie = mutanteDao.findByDna(cadenaDna);
 		
-		mutanteDao.saveAndFlush(mutante);
+		if(null == mutanteEntetie) {
+			LOGGER.info("Se registrar Cadena DNA");
+			mutante.setDna(cadenaDna);
+			mutante.setCtrMutante(ctrMutante?1:0);
+			mutanteDao.saveAndFlush(mutante);
+		}else {
+			LOGGER.info("No se registrar Cadena DNA");
+		}		
 	}
 
-	public String obtenerEstadisticas() {		
-		return mutanteDao.consultaRegistros();
+	public List<Mutante> obtenerEstadisticas() {		
+		return  mutanteDao.findAll();
 	}
 }

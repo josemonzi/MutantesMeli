@@ -38,9 +38,9 @@ Para la generación del artefacto con los comandos de maven lanzamos el comando:
 realizar los puntos 1, 4, 5 de la instalación máquina local; tomar el artefacto generado y desplegarlo en el servicio de AWS de su preferencia, Además se debe crear la base de datos (se recomienda con el servicio RDS) y configurar las variables de entorno anteriormente nombradas.
 la primera configurar en la maquina las variables de entorno:
 
-spring.datasource.url= Url de la base de datos.
-spring.datasource.username = usuario para conectarse a la base de datos.
-spring.datasource.password = contraseña para conectarse a la base de datos.
+SPRING_DATASOURCE_URL= Url de la base de datos.
+SPRING_DATASOURCE_USERNAME = usuario para conectarse a la base de datos.
+SPRING_DATASOURCE_PASSWORD= contraseña para conectarse a la base de datos.
 
 ### Diagrama de Clases
 
@@ -85,15 +85,13 @@ debemos ejecutar el siguiente comando maven en la consola: mvn clean compile ver
 
 # ENLACES
 
-Swagger: http://appfuegoquasarapp-env.eba-ans4pfnh.us-east-2.elasticbeanstalk.com/v01/fuegoQuasar/swagger-ui.html
+Swagger: http://appmutantesmeli-env.eba-pxfmfsyq.us-east-1.elasticbeanstalk.com:8080/v01/mutantes/swagger-ui.html
 
-Metodo Post /topsecret: http://appfuegoquasarapp-env.eba-ans4pfnh.us-east-2.elasticbeanstalk.com/v01/fuegoQuasar/topsecret
+Metodo Post /mutant: http://appmutantesmeli-env.eba-pxfmfsyq.us-east-1.elasticbeanstalk.com:8080/v01/mutantes/mutant
 
-Metodo Post /topsecret_split/{satellite_name}: http://appfuegoquasarapp-env.eba-ans4pfnh.us-east-2.elasticbeanstalk.com/v01/fuegoQuasar/topsecret_split/{satellite_name}
+Metodo Get /stats: http://appmutantesmeli-env.eba-pxfmfsyq.us-east-1.elasticbeanstalk.com:8080/v01/mutantes/stats
 
-Metodo Get /topsecret_split: http://appfuegoquasarapp-env.eba-ans4pfnh.us-east-2.elasticbeanstalk.com/v01/fuegoQuasar/topsecret_split/
-
-Base de datos: jdbc:mysql://database-quasar.ca7azgha2tnz.us-east-2.rds.amazonaws.com:3306/FuegoQuasar?zeroDateTimeBehavior=convertToNull&serverTimezone=America/Bogota&useSSL=false
+Base de datos: jdbc:mysql://aa1iwmi91b8uxxx.cbhvvcess5sc.us-east-1.rds.amazonaws.com:3306/DBMutante?zeroDateTimeBehavior=convertToNull&serverTimezone=America/Bogota&useSSL=false
 
 
 

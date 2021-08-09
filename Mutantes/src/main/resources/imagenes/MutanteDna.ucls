@@ -1,311 +1,321 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <class-diagram version="1.2.4" icons="true" always-add-relationships="false" generalizations="true" realizations="true" 
   associations="true" dependencies="false" nesting-relationships="true" router="FAN">  
-  <class id="1" language="java" name="com.meli.co.mutantes.dto.MutanteDnaDTO" project="Mutantes" 
-    file="/Mutantes/src/main/java/com/meli/co/mutantes/dto/MutanteDnaDTO.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="1442" y="207"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
-      sort-features="false" accessors="true" visibility="true">      
-      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
-      <operations public="true" package="true" protected="true" private="true" static="true"/>    
-    </display>  
-  </class>  
-  <class id="2" language="java" name="com.meli.co.mutantes.mapper.impl.MapperMutantes" project="Mutantes" 
-    file="/Mutantes/src/main/java/com/meli/co/mutantes/mapper/impl/MapperMutantes.java" binary="false" 
-    corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="1232" y="367"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
-      sort-features="false" accessors="true" visibility="true">      
-      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
-      <operations public="true" package="true" protected="true" private="true" static="true"/>    
-    </display>  
-  </class>  
-  <class id="3" language="java" name="com.meli.co.mutantes.service.impl.StrategyBuscarVertical" project="Mutantes" 
+  <class id="1" language="java" name="com.meli.co.mutantes.service.impl.StrategyBuscarVertical" project="Mutantes" 
     file="/Mutantes/src/main/java/com/meli/co/mutantes/service/impl/StrategyBuscarVertical.java" binary="false" 
     corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="165" y="659"/>    
+    <position height="-1" width="-1" x="470" y="669"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <interface id="4" language="java" name="com.meli.co.mutantes.service.IMutanteService" project="Mutantes" 
-    file="/Mutantes/src/main/java/com/meli/co/mutantes/service/IMutanteService.java" binary="false" 
-    corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="1469" y="659"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
-      sort-features="false" accessors="true" visibility="true">      
-      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
-      <operations public="true" package="true" protected="true" private="true" static="true"/>    
-    </display>  
-  </interface>  
-  <class id="5" language="java" name="com.meli.co.mutantes.util.Utilidades" project="Mutantes" 
-    file="/Mutantes/src/main/java/com/meli/co/mutantes/util/Utilidades.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="2025" y="677"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
-      sort-features="false" accessors="true" visibility="true">      
-      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
-      <operations public="true" package="true" protected="true" private="true" static="true"/>    
-    </display>  
-  </class>  
-  <class id="6" language="java" name="com.meli.co.mutantes.service.impl.StrategyBuscarDiagonalIzquierda" 
-    project="Mutantes" 
-    file="/Mutantes/src/main/java/com/meli/co/mutantes/service/impl/StrategyBuscarDiagonalIzquierda.java" binary="false" 
-    corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="431" y="659"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
-      sort-features="false" accessors="true" visibility="true">      
-      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
-      <operations public="true" package="true" protected="true" private="true" static="true"/>    
-    </display>  
-  </class>  
-  <class id="7" language="java" name="com.meli.co.mutantes.controller.MutanteController" project="Mutantes" 
+  <class id="2" language="java" name="com.meli.co.mutantes.controller.MutanteController" project="Mutantes" 
     file="/Mutantes/src/main/java/com/meli/co/mutantes/controller/MutanteController.java" binary="false" 
     corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="1529" y="367"/>    
+    <position height="-1" width="-1" x="1873" y="377"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="8" language="java" name="com.meli.co.mutantes.exception.BadRequestException" project="Mutantes" 
-    file="/Mutantes/src/main/java/com/meli/co/mutantes/exception/BadRequestException.java" binary="false" 
-    corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="120" y="331"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
-      sort-features="false" accessors="true" visibility="true">      
-      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
-      <operations public="true" package="true" protected="true" private="true" static="true"/>    
-    </display>  
-  </class>  
-  <class id="9" language="java" name="com.meli.co.mutantes.exception.ExceptionResponse" project="Mutantes" 
+  <class id="3" language="java" name="com.meli.co.mutantes.exception.ExceptionResponse" project="Mutantes" 
     file="/Mutantes/src/main/java/com/meli/co/mutantes/exception/ExceptionResponse.java" binary="false" 
     corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="357" y="348"/>    
+    <position height="-1" width="-1" x="129" y="312"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="10" language="java" name="com.meli.co.mutantes.service.impl.MutanteService" project="Mutantes" 
-    file="/Mutantes/src/main/java/com/meli/co/mutantes/service/impl/MutanteService.java" binary="false" 
-    corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="1905" y="394"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
-      sort-features="false" accessors="true" visibility="true">      
-      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
-      <operations public="true" package="true" protected="true" private="true" static="true"/>    
-    </display>  
-  </class>  
-  <class id="11" language="java" name="com.meli.co.mutantes.dto.EstadisticaDTO" project="Mutantes" 
+  <class id="4" language="java" name="com.meli.co.mutantes.dto.EstadisticaDTO" project="Mutantes" 
     file="/Mutantes/src/main/java/com/meli/co/mutantes/dto/EstadisticaDTO.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="1612" y="190"/>    
+    <position height="-1" width="-1" x="1521" y="199"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="12" language="java" name="com.meli.co.mutantes.service.impl.StrategyBuscarHorizontal" project="Mutantes" 
-    file="/Mutantes/src/main/java/com/meli/co/mutantes/service/impl/StrategyBuscarHorizontal.java" binary="false" 
+  <class id="5" language="java" name="com.meli.co.mutantes.exception.ForbiddenException" project="Mutantes" 
+    file="/Mutantes/src/main/java/com/meli/co/mutantes/exception/ForbiddenException.java" binary="false" 
     corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="697" y="659"/>    
+    <position height="-1" width="-1" x="339" y="493"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <interface id="13" language="java" name="com.meli.co.mutantes.dao.IMutanteDao" project="Mutantes" 
-    file="/Mutantes/src/main/java/com/meli/co/mutantes/dao/IMutanteDao.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="2238" y="650"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
-      sort-features="false" accessors="true" visibility="true">      
-      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
-      <operations public="true" package="true" protected="true" private="true" static="true"/>    
-    </display>  
-  </interface>  
-  <class id="14" language="java" name="com.meli.co.mutantes.service.impl.StrategyBuscarDiagonalDerecha" 
+  <class id="6" language="java" name="com.meli.co.mutantes.service.impl.StrategyBuscarDiagonalDerecha" 
     project="Mutantes" 
     file="/Mutantes/src/main/java/com/meli/co/mutantes/service/impl/StrategyBuscarDiagonalDerecha.java" binary="false" 
     corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="963" y="659"/>    
+    <position height="-1" width="-1" x="736" y="669"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="15" language="java" name="com.meli.co.mutantes.service.impl.BuscarDNA" project="Mutantes" 
+  <class id="7" language="java" name="com.meli.co.mutantes.service.impl.BuscarDNA" project="Mutantes" 
     file="/Mutantes/src/main/java/com/meli/co/mutantes/service/impl/BuscarDNA.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="1739" y="668"/>    
+    <position height="-1" width="-1" x="2122" y="678"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="16" language="java" name="com.meli.co.mutantes.util.Constantes" project="Mutantes" 
+  <class id="8" language="java" name="com.meli.co.mutantes.util.Constantes" project="Mutantes" 
     file="/Mutantes/src/main/java/com/meli/co/mutantes/util/Constantes.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="999" y="131"/>    
+    <position height="-1" width="-1" x="1110" y="367"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="17" language="java" name="com.meli.co.mutantes.exception.ModeloNotFoundException" project="Mutantes" 
+  <class id="9" language="java" name="com.meli.co.mutantes.exception.ModeloNotFoundException" project="Mutantes" 
     file="/Mutantes/src/main/java/com/meli/co/mutantes/exception/ModeloNotFoundException.java" binary="false" 
     corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="605" y="331"/>    
+    <position height="-1" width="-1" x="367" y="295"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="18" language="java" name="com.meli.co.mutantes.exception.ResponseExceptionHandler" project="Mutantes" 
+  <class id="10" language="java" name="com.meli.co.mutantes.exception.ResponseExceptionHandler" project="Mutantes" 
     file="/Mutantes/src/main/java/com/meli/co/mutantes/exception/ResponseExceptionHandler.java" binary="false" 
     corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="360" y="107"/>    
+    <position height="-1" width="-1" x="259" y="87"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <interface id="19" language="java" name="com.meli.co.mutantes.service.IStrategyBuscarCadena" project="Mutantes" 
+  <interface id="11" language="java" name="com.meli.co.mutantes.service.IStrategyBuscarCadena" project="Mutantes" 
     file="/Mutantes/src/main/java/com/meli/co/mutantes/service/IStrategyBuscarCadena.java" binary="false" 
     corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="697" y="825"/>    
+    <position height="-1" width="-1" x="1002" y="853"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </interface>  
-  <class id="20" language="java" name="com.meli.co.mutantes.configuracion.SwaggerConfiguracion" project="Mutantes" 
+  <class id="12" language="java" name="com.meli.co.mutantes.configuracion.SwaggerConfiguracion" project="Mutantes" 
     file="/Mutantes/src/main/java/com/meli/co/mutantes/configuracion/SwaggerConfiguracion.java" binary="false" 
     corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="2018" y="184"/>    
+    <position height="-1" width="-1" x="833" y="178"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="21" language="java" name="com.meli.co.mutantes.entities.Mutante" project="Mutantes" 
+  <class id="13" language="java" name="com.meli.co.mutantes.entities.Mutante" project="Mutantes" 
     file="/Mutantes/src/main/java/com/meli/co/mutantes/entities/Mutante.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="2238" y="436"/>    
+    <position height="-1" width="-1" x="2628" y="443"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <interface id="22" language="java" name="com.meli.co.mutantes.mapper.IMapperMutantes" project="Mutantes" 
+  <interface id="14" language="java" name="com.meli.co.mutantes.mapper.IMapperMutantes" project="Mutantes" 
     file="/Mutantes/src/main/java/com/meli/co/mutantes/mapper/IMapperMutantes.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="1232" y="650"/>    
+    <position height="-1" width="-1" x="1557" y="660"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </interface>  
-  <class id="23" language="java" name="com.meli.co.mutantes.MutantesApplication" project="Mutantes" 
+  <class id="15" language="java" name="com.meli.co.mutantes.MutantesApplication" project="Mutantes" 
     file="/Mutantes/src/main/java/com/meli/co/mutantes/MutantesApplication.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="2104" y="57"/>    
+    <position height="-1" width="-1" x="725" y="50"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="24" language="java" name="com.meli.co.mutantes.configuracion.BeanConfiguracion" project="Mutantes" 
+  <class id="16" language="java" name="com.meli.co.mutantes.dto.MutanteDnaDTO" project="Mutantes" 
+    file="/Mutantes/src/main/java/com/meli/co/mutantes/dto/MutanteDnaDTO.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="1808" y="213"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="17" language="java" name="com.meli.co.mutantes.mapper.impl.MapperMutantes" project="Mutantes" 
+    file="/Mutantes/src/main/java/com/meli/co/mutantes/mapper/impl/MapperMutantes.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="1557" y="377"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <interface id="18" language="java" name="com.meli.co.mutantes.service.IMutanteService" project="Mutantes" 
+    file="/Mutantes/src/main/java/com/meli/co/mutantes/service/IMutanteService.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="1832" y="669"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <class id="19" language="java" name="com.meli.co.mutantes.util.Utilidades" project="Mutantes" 
+    file="/Mutantes/src/main/java/com/meli/co/mutantes/util/Utilidades.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="2409" y="696"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="20" language="java" name="com.meli.co.mutantes.service.impl.StrategyBuscarDiagonalIzquierda" 
+    project="Mutantes" 
+    file="/Mutantes/src/main/java/com/meli/co/mutantes/service/impl/StrategyBuscarDiagonalIzquierda.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="1002" y="669"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="21" language="java" name="com.meli.co.mutantes.exception.BadRequestException" project="Mutantes" 
+    file="/Mutantes/src/main/java/com/meli/co/mutantes/exception/BadRequestException.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="131" y="565"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="22" language="java" name="com.meli.co.mutantes.service.impl.MutanteService" project="Mutantes" 
+    file="/Mutantes/src/main/java/com/meli/co/mutantes/service/impl/MutanteService.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="2279" y="404"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="23" language="java" name="com.meli.co.mutantes.service.impl.StrategyBuscarHorizontal" project="Mutantes" 
+    file="/Mutantes/src/main/java/com/meli/co/mutantes/service/impl/StrategyBuscarHorizontal.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="1268" y="669"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <interface id="24" language="java" name="com.meli.co.mutantes.dao.IMutanteDao" project="Mutantes" 
+    file="/Mutantes/src/main/java/com/meli/co/mutantes/dao/IMutanteDao.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="2623" y="660"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <class id="25" language="java" name="com.meli.co.mutantes.configuracion.BeanConfiguracion" project="Mutantes" 
     file="/Mutantes/src/main/java/com/meli/co/mutantes/configuracion/BeanConfiguracion.java" binary="false" 
     corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="2210" y="184"/>    
+    <position height="-1" width="-1" x="635" y="178"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <association id="25">    
-    <end type="SOURCE" refId="7" navigable="false">      
-      <attribute id="26" name="mutanteService"/>      
-      <multiplicity id="27" minimum="0" maximum="1"/>    
+  <realization id="26">    
+    <end type="SOURCE" refId="1"/>    
+    <end type="TARGET" refId="11"/>  
+  </realization>  
+  <association id="27">    
+    <end type="SOURCE" refId="22" navigable="false">      
+      <attribute id="28" name="mutanteDao"/>      
+      <multiplicity id="29" minimum="0" maximum="1"/>    
     </end>    
-    <end type="TARGET" refId="4" navigable="true"/>    
+    <end type="TARGET" refId="24" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <realization id="28">    
-    <end type="SOURCE" refId="6"/>    
-    <end type="TARGET" refId="19"/>  
-  </realization>  
-  <association id="29">    
-    <end type="SOURCE" refId="10" navigable="false">      
-      <attribute id="30" name="utilidades"/>      
-      <multiplicity id="31" minimum="0" maximum="1"/>    
+  <association id="30">    
+    <end type="SOURCE" refId="2" navigable="false">      
+      <attribute id="31" name="mutanteService"/>      
+      <multiplicity id="32" minimum="0" maximum="1"/>    
     </end>    
-    <end type="TARGET" refId="5" navigable="true"/>    
+    <end type="TARGET" refId="18" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <realization id="32">    
-    <end type="SOURCE" refId="2"/>    
-    <end type="TARGET" refId="22"/>  
-  </realization>  
   <association id="33">    
-    <end type="SOURCE" refId="10" navigable="false">      
-      <attribute id="34" name="mutanteDao"/>      
+    <end type="SOURCE" refId="22" navigable="false">      
+      <attribute id="34" name="buscarDna"/>      
       <multiplicity id="35" minimum="0" maximum="1"/>    
     </end>    
-    <end type="TARGET" refId="13" navigable="true"/>    
+    <end type="TARGET" refId="7" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
   <realization id="36">    
-    <end type="SOURCE" refId="14"/>    
-    <end type="TARGET" refId="19"/>  
+    <end type="SOURCE" refId="22"/>    
+    <end type="TARGET" refId="18"/>  
   </realization>  
-  <realization id="37">    
-    <end type="SOURCE" refId="10"/>    
-    <end type="TARGET" refId="4"/>  
-  </realization>  
-  <association id="38">    
+  <association id="37">    
     <end type="SOURCE" refId="7" navigable="false">      
-      <attribute id="39" name="mapperMutantes"/>      
-      <multiplicity id="40" minimum="0" maximum="1"/>    
+      <attribute id="38" name="strategyBuscarCadena"/>      
+      <multiplicity id="39" minimum="0" maximum="1"/>    
     </end>    
-    <end type="TARGET" refId="22" navigable="true"/>    
+    <end type="TARGET" refId="11" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <realization id="41">    
-    <end type="SOURCE" refId="3"/>    
-    <end type="TARGET" refId="19"/>  
+  <realization id="40">    
+    <end type="SOURCE" refId="23"/>    
+    <end type="TARGET" refId="11"/>  
   </realization>  
-  <realization id="42">    
-    <end type="SOURCE" refId="12"/>    
-    <end type="TARGET" refId="19"/>  
-  </realization>  
-  <association id="43">    
-    <end type="SOURCE" refId="15" navigable="false">      
-      <attribute id="44" name="strategyBuscarCadena"/>      
-      <multiplicity id="45" minimum="0" maximum="1"/>    
+  <association id="41">    
+    <end type="SOURCE" refId="22" navigable="false">      
+      <attribute id="42" name="utilidades"/>      
+      <multiplicity id="43" minimum="0" maximum="1"/>    
     </end>    
     <end type="TARGET" refId="19" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <association id="46">    
-    <end type="SOURCE" refId="10" navigable="false">      
-      <attribute id="47" name="buscarDna"/>      
-      <multiplicity id="48" minimum="0" maximum="1"/>    
+  <association id="44">    
+    <end type="SOURCE" refId="2" navigable="false">      
+      <attribute id="45" name="mapperMutantes"/>      
+      <multiplicity id="46" minimum="0" maximum="1"/>    
     </end>    
-    <end type="TARGET" refId="15" navigable="true"/>    
+    <end type="TARGET" refId="14" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
+  <realization id="47">    
+    <end type="SOURCE" refId="17"/>    
+    <end type="TARGET" refId="14"/>  
+  </realization>  
+  <realization id="48">    
+    <end type="SOURCE" refId="20"/>    
+    <end type="TARGET" refId="11"/>  
+  </realization>  
+  <realization id="49">    
+    <end type="SOURCE" refId="6"/>    
+    <end type="TARGET" refId="11"/>  
+  </realization>  
   <classifier-display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
     sort-features="false" accessors="true" visibility="true">    
     <attributes public="true" package="true" protected="true" private="true" static="true"/>    

@@ -1,5 +1,7 @@
 package com.meli.co.mutantes.util;
 
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import java.util.Arrays;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -49,5 +51,25 @@ public class Utilidades {
 			}
 		}	
 		return matrizMutante;		 
+	}
+	
+	public String convertirDnaSHA256(String dna ) {
+		MessageDigest md = null;
+		try {
+			md = MessageDigest.getInstance("SHA-256");
+		} 
+		catch (NoSuchAlgorithmException e) {			
+			LOGGER.error(e.getMessage());
+			return null;
+		}
+		    
+		byte[] hash = md.digest(dna.getBytes());
+		StringBuffer sb = new StringBuffer();
+		    
+		for(byte b : hash) {        
+			sb.append(String.format("%02x", b));
+		}
+		    
+		return sb.toString();
 	}
 }

@@ -3,10 +3,10 @@ CREATE DATABASE IF NOT EXISTS DBMutante;
 USE DBMutante;
 
 CREATE TABLE mutante(
-    idMutante INT(5) NOT NULL AUTO_INCREMENT,
-    dna VARCHAR(200) NOT NULL,
-    ctrMutante int(1),
+    id_Mutante INT(50) NOT NULL AUTO_INCREMENT,
+    dna VARCHAR(150) NOT NULL,
+    ctr_Mutante int(2),
     CONSTRAINT mutante_pk PRIMARY KEY (idMutante)
     );
 
-ALTER TABLE mutante AUTO_INCREMENT = 0;
+ALTER TABLE mutante AUTO_INCREMENT = 1;

@@ -1,7 +1,6 @@
 package com.meli.co.mutantes.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -28,12 +27,12 @@ public class MutanteController {
 		this.mapperMutantes = mapperMutantes;
 	}
 
+	@SuppressWarnings("rawtypes")
 	@CrossOrigin
 	@PostMapping(value = Constantes.MUTANTE_CONTROLLER, produces = "application/json", consumes = "application/json")
-	public ResponseEntity<String> isMutant(@RequestBody MutanteDnaDTO dna) {		
-		if(!mutanteService.isMutant(dna.getDna())) 
-			return new ResponseEntity<String>(HttpStatus.FORBIDDEN);
-		return new ResponseEntity<String>(HttpStatus.OK);
+	public ResponseEntity isMutant(@RequestBody MutanteDnaDTO dna) {		
+			mutanteService.isMutant(dna.getDna());			
+		return ResponseEntity.ok().build();
 	}
 	
 	@CrossOrigin

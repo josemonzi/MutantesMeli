@@ -12,7 +12,7 @@ public class StrategyBuscarDiagonalIzquierda implements IStrategyBuscarCadena {
 		StringBuilder cadena = new StringBuilder();		
 		
 		while(bandera) {
-			if (columna < (columnaMatriz) && columna !=0) {
+			if (columna <= (columnaMatriz) && columna !=0) {
 				columna--;
 			}else {
 				bandera = false;

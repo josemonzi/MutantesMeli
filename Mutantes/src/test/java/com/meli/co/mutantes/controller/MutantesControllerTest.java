@@ -7,6 +7,9 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -20,6 +23,7 @@ import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.meli.co.mutantes.dao.IMutanteDao;
 import com.meli.co.mutantes.dto.MutanteDnaDTO;
+import com.meli.co.mutantes.entities.Mutante;
 import com.meli.co.mutantes.exception.ResponseExceptionHandler;
 import com.meli.co.mutantes.mapper.IMapperMutantes;
 import com.meli.co.mutantes.mapper.impl.MapperMutantes;
@@ -58,7 +62,23 @@ public class MutantesControllerTest {
 
 	@Test
 	public void cuandoLlegaCadenaMutanteValidaHorizontalEntoncesValidaSiEsMutanteRetornado200() throws Exception {		
-		String[] dna = new String[] {"ATGCGA","CGGTGC","TTATGT","AGAATA","CCCCTA","TCACTT"};
+		String[] dna = new String[] {"ATGCGA","CGGTGC","TTTTGT","AGAATA","CCCCGA","TCACTT"};
+		final ObjectMapper mapper = new ObjectMapper();
+		MutanteDnaDTO mutanteDnaDto = new MutanteDnaDTO();
+		mutanteDnaDto.setDna(dna);
+		final String jsonRequest = mapper.writeValueAsString(mutanteDnaDto);
+		
+		
+		mvcMock.perform(
+				post("/mutant")
+						.contentType(MediaType.APPLICATION_JSON)
+						.content(jsonRequest))
+				.andExpect(status().isOk());
+	}
+	
+	@Test
+	public void cuandoLlegaCadenaMutanteValidaHorizontalX2EntoncesValidaSiEsMutanteRetornado200() throws Exception {		
+		String[] dna = new String[] {"ATGCGA","CAGTGC","TCTTTT","AGTATA","CCCCTA","TCACTT"};
 		final ObjectMapper mapper = new ObjectMapper();
 		MutanteDnaDTO mutanteDnaDto = new MutanteDnaDTO();
 		mutanteDnaDto.setDna(dna);
@@ -74,7 +94,7 @@ public class MutantesControllerTest {
 	
 	@Test
 	public void cuandoLlegaCadenaMutanteValidaVerticalEntoncesValidaSiEsMutanteRetornado200() throws Exception {		
-		String[] dna = new String[] {"ATG","AAG","ATA", "AGA"};
+		String[] dna = new String[] {"ATGCGA","CGGTGC","TTATGT","AGTTTA","CTCTTA","TCACTT"};
 		final ObjectMapper mapper = new ObjectMapper();
 		MutanteDnaDTO mutanteDnaDto = new MutanteDnaDTO();
 		mutanteDnaDto.setDna(dna);
@@ -90,7 +110,7 @@ public class MutantesControllerTest {
 	
 	@Test
 	public void cuandoLlegaCadenaMutanteValidaDiagonalDerechaEntoncesValidaSiEsMutanteRetornado200() throws Exception {		
-		String[] dna = new String[] {"ATGCGA","CGTGGC","TTCTGT","ACAATG","CGCCTA","TCACTC"};
+		String[] dna = new String[] {"ATGCGA","CGGAGC","TATTGT","AGATTA","CCCCTA","TCACTT"};
 		final ObjectMapper mapper = new ObjectMapper();
 		MutanteDnaDTO mutanteDnaDto = new MutanteDnaDTO();
 		mutanteDnaDto.setDna(dna);
@@ -107,7 +127,7 @@ public class MutantesControllerTest {
 	
 	@Test
 	public void cuandoLlegaCadenaMutanteValidaDiagonalIzquierdaEntoncesValidaSiEsMutanteRetornado200() throws Exception {		
-		String[] dna = new String[] {"ATGCGA","CGGCGC","TTCTGT","ACAATA","CGCCTA","TCACTG"};
+		String[] dna = new String[] {"ATGCGA","CGGAGC","TATTCT","AGACTA","TCCCTA","TCTTTT"};
 		final ObjectMapper mapper = new ObjectMapper();
 		MutanteDnaDTO mutanteDnaDto = new MutanteDnaDTO();
 		mutanteDnaDto.setDna(dna);
@@ -119,8 +139,7 @@ public class MutantesControllerTest {
 						.contentType(MediaType.APPLICATION_JSON)
 						.content(jsonRequest))
 				.andExpect(status().isOk());
-	}
-	
+	}	
 	
 	@Test
 	public void cuandoLlegaCadenaMutanteNoValidaEntoncesNoValidaSiEsMutanteRetornado400() throws Exception {		
@@ -171,8 +190,27 @@ public class MutantesControllerTest {
 	}
 	
 	@Test
-	public void cuandoConsultaEstadisticasEntoncesRetornaDnaHumanoDnaMutanteProporcion200() throws Exception {			
-		when(mutanteDao.consultaRegistros()).thenReturn("2,5,0.4000");
+	public void cuandoConsultaEstadisticasEntoncesRetornaDnaHumanoDnaMutanteProporcion200() throws Exception {	
+		List<Mutante> mutante = new ArrayList<Mutante>();
+		Mutante m = new Mutante();		
+		m.setIdMutante(1);
+		m.setDna("777bcb9d92b262d4847f8c87caff1c66dcd1c093b76409982c70a30e5fcaa149");
+		m.setCtrMutante(1);
+		mutante.add(m);
+		
+		m = new Mutante();		
+		m.setIdMutante(1);
+		m.setDna("e8f4281a5012eada6940aaa2d1e392acfbf0913d84c37da3af8949492b5820dd");
+		m.setCtrMutante(0);
+		mutante.add(m);
+		
+		m = new Mutante();		
+		m.setIdMutante(1);
+		m.setDna("964AAC7109FA552E199601C8F6357121DA859771DA83BA84B3E3B5823B10373C");
+		m.setCtrMutante(1);
+		mutante.add(m);	
+		
+		when(mutanteDao.findAll()).thenReturn(mutante);
 		
 		
 		mvcMock.perform(
@@ -189,19 +227,19 @@ public class MutantesControllerTest {
 	}
 	
 	@Test
-	public void cuandoConsultaEstadisticasEntoncesNORetornaDnaHumanoNODnaMutanteNOProporcionDevuelve200() throws Exception {			
-		when(mutanteDao.consultaRegistros()).thenReturn("0,0,NULL");
+	public void cuandoConsultaEstadisticasEntoncesObjetoVacioNORetornaDnaHumanoNODnaMutanteNOProporcionDevuelve404() throws Exception {			
+		List<Mutante> mutante = new ArrayList<Mutante>();		
 		
+		when(mutanteDao.findAll()).thenReturn(mutante);		
 		
 		mvcMock.perform(
 				get("/stats").contentType(MediaType.APPLICATION_JSON))						
-				.andExpect(status().isOk())
-				.andExpect(content().contentTypeCompatibleWith(MediaType.APPLICATION_JSON));
+				.andExpect(status().isNotFound());
 	}
 	
 	@Test
 	public void cuandoConsultaEstadisticasEntoncesRetornaVacioNORetornaDnaHumanoNODnaMutanteNOProporcionDevuelve404() throws Exception {			
-		when(mutanteDao.consultaRegistros()).thenReturn("");
+		when(mutanteDao.findAll()).thenReturn(null);
 		
 		
 		mvcMock.perform(

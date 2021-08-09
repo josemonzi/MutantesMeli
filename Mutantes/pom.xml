@@ -91,6 +91,7 @@
 						<exclude>**/*com/meli/co/mutantes/configuracion/SwaggerConfiguracion.class</exclude>
 						<exclude>**/*com/meli/co/mutantes/util/Constantes.class</exclude>							
 						<exclude>**/*com/meli/co/mutantes/entities/Mutante.class</exclude>
+						<exclude>**/*com/meli/co/mutantes/exception/ResponseExceptionHandler.class</exclude>
 					</excludes>
 				</configuration>
 				<executions>

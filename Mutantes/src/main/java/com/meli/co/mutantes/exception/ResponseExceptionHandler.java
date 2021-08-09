@@ -38,4 +38,10 @@ public class ResponseExceptionHandler extends ResponseEntityExceptionHandler{
 		ExceptionResponse exceptionResponse = new ExceptionResponse(new Date(), ex.getMessage(),request.getDescription(false));		
 		return new ResponseEntity<Object>(exceptionResponse, HttpStatus.BAD_REQUEST);
 	}	
+	
+	@ExceptionHandler(ForbiddenException.class)
+	public final ResponseEntity<Object> ForbiddenException(ForbiddenException ex, WebRequest request) {
+		LOGGER.error("Es una cadena DNA de un humano.");				
+		return new ResponseEntity<Object>(HttpStatus.FORBIDDEN);
+	}	
 }
