@@ -13,4 +13,5 @@ public class Constantes {
   	
   	//Generales
   	public static final String PATRON = "[^ATCG]";
+  	public static final String ALGORITMO = "SHA-256";
 }

@@ -3,7 +3,7 @@ package com.meli.co.mutantes.util;
 import static org.junit.Assert.assertArrayEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
-import static org.mockito.Mockito.doThrow;
+import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
 import java.security.MessageDigest;
@@ -11,17 +11,21 @@ import java.security.NoSuchAlgorithmException;
 
 import org.junit.Before;
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.mockito.junit.MockitoJUnitRunner;
 
 import com.meli.co.mutantes.exception.BadRequestException;
 
-
+@RunWith(MockitoJUnitRunner.class)
 public class UtilidadesTest {
 	
 	private Utilidades utilidades;
+	private MessageDigest messageDigest;
 	
 	@Before
 	public void setUp() {
 		utilidades = new Utilidades();
+		messageDigest = mock(MessageDigest.class);
 	}
 
 	@Test
@@ -91,6 +95,15 @@ public class UtilidadesTest {
 		String[] dna = null;
 		
 		utilidades.crearMatriz(dna);
+	}
+	
+	@SuppressWarnings("static-access")
+	@Test(expected = Exception.class)
+	public void cuandoLlegaCadenaMutanteNullNoValidasEntoncesValidaCadenaDnaRetornandoError400()throws Exception {		
+		String dna = "prueba";
+		
+		when(messageDigest.getInstance("SHA-256")).thenThrow(NoSuchAlgorithmException.class);
+		utilidades.convertirDnaSHA256(dna);
 	}
 
 }

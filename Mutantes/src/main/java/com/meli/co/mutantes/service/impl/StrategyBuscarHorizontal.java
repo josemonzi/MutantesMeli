@@ -1,31 +1,39 @@
 package com.meli.co.mutantes.service.impl;
 
+import java.util.Arrays;
+
+import com.meli.co.mutantes.dto.MatrizDTO;
 import com.meli.co.mutantes.service.IStrategyBuscarCadena;
 
 public class StrategyBuscarHorizontal implements IStrategyBuscarCadena {
 
 	@Override
-	public boolean execute(int fila, int columna, Character itemPivote, char[][] matriz) {
+	public char[][] execute(int fila, int columna, Character itemPivote, char[][] matriz, MatrizDTO cantidadMutante) {
 		boolean bandera= true;	
-		int columnaMatriz =  matriz[0].length -1;
+		int columnaMatriz =  matriz[0].length -1, 
+			columnaOrigen= columna;		
+		char[][] matrizTmp = Arrays.stream(matriz)
+				.map(r -> r.clone()).toArray(char[][]::new);
 		StringBuilder cadena = new StringBuilder();		
 		
 		while(bandera) {
 			if (columna < (columnaMatriz)) {
 				columna++;
-			}else {
-				bandera = false;
+			}else {				
 				break;
 			}		
 			if(itemPivote.equals(matriz[fila][columna])) {						
 				cadena.append(matriz[fila][columna]);
+				matrizTmp[fila][columna] = 'M';
 				if(cadena.length()==3) {
-					return true;							
+					matrizTmp[fila][columnaOrigen] = 'M';
+					cantidadMutante.setContadorMutane(1);
+					return matrizTmp;
 				}
 			}else {
-				bandera = false;
+				break;
 			}
 		}
-		return false;
+		return matriz;
 	}
 }

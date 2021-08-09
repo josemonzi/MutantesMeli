@@ -56,7 +56,7 @@ public class Utilidades {
 	public String convertirDnaSHA256(String dna ) {
 		MessageDigest md = null;
 		try {
-			md = MessageDigest.getInstance("SHA-256");
+			md = MessageDigest.getInstance(Constantes.ALGORITMO);			
 		} 
 		catch (NoSuchAlgorithmException e) {			
 			LOGGER.error(e.getMessage());

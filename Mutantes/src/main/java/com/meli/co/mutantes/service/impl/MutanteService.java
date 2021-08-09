@@ -10,6 +10,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 
 import com.meli.co.mutantes.dao.IMutanteDao;
+import com.meli.co.mutantes.dto.MatrizDTO;
 import com.meli.co.mutantes.entities.Mutante;
 import com.meli.co.mutantes.exception.BadRequestException;
 import com.meli.co.mutantes.exception.ForbiddenException;
@@ -53,66 +54,43 @@ public class MutanteService implements IMutanteService {
 	
 	private boolean buscarMutante(char[][] matrizMutante) {
 		LOGGER.info("Buscar si es un mutante");
+		MatrizDTO cantidadMutante = new MatrizDTO(0);
 		int columna = matrizMutante[0].length;
 		int fila = matrizMutante.length;
-		int contadorMutante = 0; 
-		boolean banderaCadena= false;
+		Character itemPivote = null;
+		char[][] matrizTmp = matrizMutante;
 		
 		for(int i=0; i< fila; i++ ) {
 			for(int j=0; j< columna; j++) {
-				Character itemPivote = matrizMutante[i][j];
-				
-				buscarDna.setStrategyBuscarCadena(new StrategyBuscarHorizontal());
-				banderaCadena = buscarDna.ejecutarStrategy(i, j, itemPivote, matrizMutante);
-				if(!banderaCadena) {
+				itemPivote = matrizTmp[i][j];	
+					buscarDna.setStrategyBuscarCadena(new StrategyBuscarHorizontal());
+					matrizTmp = buscarDna.ejecutarStrategy(i, j, itemPivote, matrizMutante, cantidadMutante);				
 					buscarDna.setStrategyBuscarCadena(new StrategyBuscarVertical());
-					banderaCadena = buscarDna.ejecutarStrategy(i, j, itemPivote, matrizMutante);
-				}else{
-					LOGGER.info(Constantes.MENSAJE_SUCCESS_MUTANTE);
-					contadorMutante++;					
-					if(contadorMutante >=2)
-						return banderaCadena;
-					else
-						banderaCadena= false;
-				}
-				
-				if(!banderaCadena){
-					buscarDna.setStrategyBuscarCadena(new StrategyBuscarDiagonalDerecha());
-					banderaCadena = buscarDna.ejecutarStrategy(i, j, itemPivote, matrizMutante);
-				}else{
-					LOGGER.info(Constantes.MENSAJE_SUCCESS_MUTANTE);
-					contadorMutante++;
-					if(contadorMutante >=2)
-						return banderaCadena;
-					else
-						banderaCadena= false;
-				}
-				
-				if(!banderaCadena){
+					matrizTmp = buscarDna.ejecutarStrategy(i, j, itemPivote, matrizMutante, cantidadMutante);
+					buscarDna.setStrategyBuscarCadena(new StrategyBuscarDiagonalDerecha());				
+					matrizTmp = buscarDna.ejecutarStrategy(i, j, itemPivote, matrizMutante, cantidadMutante);
 					buscarDna.setStrategyBuscarCadena(new StrategyBuscarDiagonalIzquierda());
-					banderaCadena = buscarDna.ejecutarStrategy(i, j, itemPivote, matrizMutante);
-					
-					if(banderaCadena) {
-						LOGGER.info(Constantes.MENSAJE_SUCCESS_MUTANTE);
-						contadorMutante++;						
-						if(contadorMutante >=2)
-							return banderaCadena;
-						else
-							banderaCadena= false;
-					}
-				}else{
-					LOGGER.info(Constantes.MENSAJE_SUCCESS_MUTANTE);
-					contadorMutante++;					
-					if(contadorMutante >=2)
-						return banderaCadena;
-					else
-						banderaCadena= false;
-				}				
+					matrizTmp = buscarDna.ejecutarStrategy(i, j, itemPivote, matrizMutante, cantidadMutante);
+				printMatrix(matrizTmp);
+				if(validarBusquedaMutante(cantidadMutante.getContadorMutante())){
+					return true;					
+				};	
 			}
 		}	
 		LOGGER.info(Constantes.MENSAJE_SUCCESS_HUMANO);
-		return banderaCadena;
+		return false;
 	}
+	
+	private static void printMatrix(char[][] matrix) {
+        System.out.println("\n Matriz analizada: ");
+        for (int i = 0; i < matrix.length; i++) {
+            System.out.println("");
+            for (int j = 0; j < matrix[0].length; j++) {
+                //imprime matriz generada
+                System.out.print(matrix[i][j] + " ");
+            }
+        }
+    }
 	
 	private void registrarCadenaDna(boolean ctrMutante, String[] dna) {
 		LOGGER.info("Registrar Mutante - Cadena: " + Arrays.toString(dna) + " es mutante: " + ctrMutante);
@@ -133,5 +111,9 @@ public class MutanteService implements IMutanteService {
 
 	public List<Mutante> obtenerEstadisticas() {		
 		return  mutanteDao.findAll();
+	}
+	
+	private boolean validarBusquedaMutante(int cantidadMutante) {
+		return cantidadMutante>=2?true:false;
 	}
 }
