@@ -21,9 +21,9 @@ public class MapperMutantes implements IMapperMutantes{
 		if( null == consultaRegistros|| consultaRegistros.isEmpty())
 			throw new ModeloNotFoundException(Constantes.MENSAJE_NULO);
 		
-		int dnaMutante = (int) consultaRegistros.stream().filter(x -> x.getCtrMutante() == 1).count();
-		int dnaHumano = (int) consultaRegistros.stream().filter(x -> x.getCtrMutante() == 0).count();
-		double proporcion = (double) dnaMutante/dnaHumano;
+		final int dnaMutante = (int) consultaRegistros.stream().filter(x -> x.getCtrMutante() == 1).count();
+		final int dnaHumano = (int) consultaRegistros.stream().filter(x -> x.getCtrMutante() == 0).count();
+		final double proporcion = (double) dnaMutante/dnaHumano;
 				
 		return new EstadisticaDTO(dnaMutante, dnaHumano, proporcion);
 	}
